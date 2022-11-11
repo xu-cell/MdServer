@@ -1,0 +1,18 @@
+{
+    "files.associations": {
+        "*.tcc": "cpp",
+        "memory": "cpp",
+        "type_traits": "cpp",
+        "fstream": "cpp",
+        "istream": "cpp",
+        "ostream": "cpp",
+        "sstream": "cpp",
+        "streambuf": "cpp",
+        "iostream": "cpp",
+        "exception": "cpp",
+        "limits": "cpp",
+        "optional": "cpp",
+        "string_view": "cpp",
+        "iosfwd": "cpp"
+    }
+}
