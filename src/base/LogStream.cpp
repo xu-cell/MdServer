@@ -1,5 +1,4 @@
 #include "LogStream.h"
-#include "LogStream.h"
 #include <assert.h>
 #include <stdint.h>
 #include <stdio.h>
@@ -33,7 +32,7 @@ void FixedBuffer<SIZE>::append(const char *buf, size_t len)
 {
     if (avail() > static_cast<int>(len))
     {
-        memccpy(cur_, buf, len);
+        memcpy(cur_, buf, len);
         cur_ += len;
     }
 }
@@ -75,7 +74,7 @@ void FixedBuffer<SIZE>::bzero()
 template <int SIZE>
 const char *FixedBuffer<SIZE>::end() const
 {
-    return data_ + sizeof date_;
+    return data_ + sizeof data_;
 }
 
 template class FixedBuffer<kSmallBuffer>;

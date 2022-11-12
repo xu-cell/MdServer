@@ -29,6 +29,4 @@ string(TOUPPER ${CMAKE_BUILD_TYPE} BUILD_TYPE)
 #类似printf打印信息
 message(STATUS "CXX_FLAGS = " ${CMAKE_CXX_FLAGS} " " ${CMAKE_CXX_FLAGS_${BUILD_TYPE}})
 
-add_subdirectory(src/server)
-add_subdirectory((src/base))
-add_subdirectory(src/test)
+add_subdirectory(src)

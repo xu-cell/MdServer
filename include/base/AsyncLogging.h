@@ -1,6 +1,6 @@
 /*启动一个线程 将日志写入日志文件*/
-#ifndef ASYNCLOGGING_H;
-#define ASYNCLOGGING_H;
+#ifndef ASYNCLOGGING_H
+#define ASYNCLOGGING_H
 #include "noncopyable.h"
 #include <functional>
 #include <vector>
@@ -22,7 +22,7 @@ public:
         void start()
         {
             running_ = true;
-            cond_ = start();
+            thread_ .start();
             latch_.wait();
         }
         void stop()

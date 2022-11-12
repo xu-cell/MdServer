@@ -1,4 +1,5 @@
 //LogStream主要用来格式化输出，重载了<<运算符，同时也有自己的一块缓冲区，这里缓冲区的存在是为了缓存一行，把多个<<的结果连成一块。
+//LogStream.是将要输出的信息加载到FixedBuffer缓冲区，等待Logger(后面讲)进一步处理
 #ifndef LOGSTREAM_H
 #define LOGSTREAM_H
 #include <assert.h>
@@ -27,7 +28,7 @@ public:
     void bzero();
 private:
     const char* end()const;
-    const data_[SIZE];
+    char data_[SIZE];
     char* cur_; 
 };
 
@@ -55,7 +56,7 @@ public:
     LogStream &operator<<(const std::string &v);
     LogStream &operator<<(char v);
     void append(const char *data, int len);
-    const Buffer &buffer()const;
+    const Buffer &buffer()const{return buffer_;}
     void resetBuffer();
 
 private:

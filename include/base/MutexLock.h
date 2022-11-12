@@ -27,7 +27,7 @@ private:
         holder = 0;
         pthread_mutex_unlock(&mutex_); // 顺序不能反
     }
-    pthread_mutex_t* getMutex() //仅供Condition使用
+    pthread_mutex_t* get() //仅供Condition使用
     {
         return &mutex_;
     }
