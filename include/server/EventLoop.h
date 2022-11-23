@@ -51,7 +51,7 @@ private:
 
     int wakeupfd_;
     shared_ptr<Channel>pwakeupChannel_;
-    unique_ptr<Epoll>poller_;
+    shared_ptr<Epoll>poller_;
     vector<Functor>pendingFunctors_;
     const pid_t threadId_;
     mutable MutexLock mutex_;

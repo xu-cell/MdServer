@@ -45,18 +45,18 @@ public:
     void handleError(int fd,int err_num,std::string short_msg);
     void handleConn();
     //为channel设置感兴趣的事件
-    void setRevents(int ev);
-    void setEvents(int ev);
-    int &getEvents();
+    void setRevents(__uint32_t ev);
+    void setEvents(__uint32_t ev);
+    __uint32_t &getEvents();
 
     bool EqualAndUpdateLastEvents();
-    int getLastEvents();
+    __uint32_t getLastEvents();
 
 private:
     EventLoop *loop_;
-    int events_;
-    int revents_;
-    int lastEvents_;
+    __uint32_t events_;
+    __uint32_t revents_;
+    __uint32_t lastEvents_;
     int fd_;
     //每一个channel都属于一个Eventloop，使用弱指针，能够监视上层持有该对象的状态,
     //通过提升，得到持有该channel的对象，一个http连接对应一个channel

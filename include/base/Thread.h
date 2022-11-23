@@ -32,7 +32,7 @@ private:
     bool joined_;
     pthread_t pthreadId_;
     ThreadFunc func_;
-    CountDownLatch latch_;
+    CountDownLatch latch_; //同步辅助，一般用于主线程通知众多的子线程开始运行
 };
 
 

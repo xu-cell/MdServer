@@ -23,9 +23,11 @@ Channel::~Channel()
 
 void Channel::setfd(int fd)
 {
+    fd_ = fd;
 }
 int Channel::getfd()
 {
+    return fd_;
 }
 
 void Channel::setHolder(std::shared_ptr<HttpData> holder)
@@ -66,6 +68,7 @@ void Channel::handleEvents()
     }
     if(revents_ & EPOLLERR)
     {
+        if(errorHandler_) errorHandler_();
         events_ = 0;
         return;
     }
@@ -109,15 +112,15 @@ void Channel::handleConn()
     }
 }
 //为channel设置感兴趣的事件
-void Channel::setRevents(int ev)
+void Channel::setRevents(__uint32_t ev)
 {
     revents_ = ev;
 }
-void Channel::setEvents(int ev)
+void Channel::setEvents(__uint32_t ev)
 {
     events_ = ev;
 }
-int &Channel::getEvents()
+__uint32_t &Channel::getEvents()
 {
     return events_;
 }
@@ -128,7 +131,7 @@ bool Channel::EqualAndUpdateLastEvents()
     lastEvents_ = events_;
     return ret;
 }
-int Channel::getLastEvents()
+__uint32_t Channel::getLastEvents()
 {
     return lastEvents_;
 }

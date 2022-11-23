@@ -7,6 +7,7 @@
 #include <time.h>  
 #include <sys/time.h> 
 
+//保证我们的异步日志类实例只被初始化一次
 static pthread_once_t once_control = PTHREAD_ONCE_INIT;
 static AsyncLogging *AsyncLogger_;
 

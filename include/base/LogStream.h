@@ -16,7 +16,7 @@ class FixedBuffer : noncopyable
 {
 public:
     FixedBuffer():cur_(data_){}
-    ~FixedBuffer();
+    ~FixedBuffer(){}
 
     void append(const char* buf,size_t len);
     const char* data()const;

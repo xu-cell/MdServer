@@ -44,7 +44,7 @@ struct ThreadData
     {
         *tid_ = CurrentThread::tid();
         tid_ = NULL;
-        latch_->countDown();
+        latch_->countDown(); //众多子线程卡在这个位置，等待主线程notify！
         latch_ = NULL;
 
         CurrentThread::t_threadName = name_.empty() ? "Thread":name_.c_str();

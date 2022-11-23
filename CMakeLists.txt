@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.0)
 
-project(Webserver)
+project(WebServer CXX)
 
 if(NOT CMAKE_BUILD_TYPE)
     set(CMAKE_BUILD_TYPE "Debug")
@@ -16,6 +16,7 @@ set(CXX_FLAGS
 )
 include_directories(${PROJECT_SOURCE_DIR}/include/server)
 include_directories(${PROJECT_SOURCE_DIR}/include/base)
+include_directories(${PROJECT_SOURCE_DIR}/include/base/NanoLog)
 set(CMAKE_CXX_COMPILER "g++")
 set(CMAKE_CXX_FLAGS_DEBUG "-O0")
 set(CMAKE_CXX_FLAGS_RELEASE "-O0")

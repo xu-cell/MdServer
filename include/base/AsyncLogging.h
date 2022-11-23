@@ -47,7 +47,7 @@ private:
     bool running_;
     const int flushInterval_;
     CountDownLatch latch_;
-    BufferVector buffers_; //维护2个空闲日志缓冲区
+    BufferVector buffers_; //已填满的buffer pool
     BufferPtr nextBuffer_; //下一个可供交换的buffer
     BufferPtr currentBuffer_; //当前写的buffer
     

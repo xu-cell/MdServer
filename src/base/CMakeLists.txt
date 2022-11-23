@@ -5,7 +5,8 @@ set(LIB_SRC
     LogFile.cpp
     Logging.cpp
     LogStream.cpp
-    Thread.cpp)
+    Thread.cpp
+    NanoLog.cpp)
 
 add_library(libserver_base ${LIB_SRC})
 
